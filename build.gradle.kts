@@ -1,13 +1,28 @@
-import org.gradle.kotlin.dsl.kotlin
-
 plugins {
-    kotlin("jvm")
+    id("com.android.library")
+    kotlin("android")
     @Suppress("DSL_SCOPE_VIOLATION")
     alias(libs.plugins.kotlin.serialization)
 }
 
-sourceSets.all {
-    java.srcDir("src/main/kotlin")
+configure<com.android.build.api.dsl.LibraryExtension> {
+    namespace = "com.metrolist.music.betterlyrics"
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 24
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+    }
+
+    sourceSets["main"].java.srcDir("src/main/kotlin")
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions.jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21)
 }
 
 dependencies {
