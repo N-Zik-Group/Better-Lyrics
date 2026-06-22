@@ -50,7 +50,7 @@ object BetterLyrics {
         duration: Int = -1,
         album: String? = null,
     ): String? = runCatching {
-        println("$TAG: Fetching TTML for: $title by $artist (dur=$duration, album=$album)")
+        println("$TAG: Requesting TTML -> Title: '$title' | Artist: '$artist' | Duration: $duration | Album: '${album ?: "N/A"}'")
         val response = client.get("/getLyrics") {
             parameter("s", title)
             parameter("a", artist)
@@ -61,15 +61,24 @@ object BetterLyrics {
                 parameter("al", album)
             }
         }
+        
+        println("$TAG: Request URL: ${response.call.request.url}")
+        
         if (response.status == HttpStatusCode.OK) {
             val ttml = response.body<TTMLResponse>().ttml?.trim()?.takeIf { it.isNotEmpty() }
+            if (ttml != null) {
+                println("$TAG: Successfully received TTML (length=${ttml.length})")
+            } else {
+                println("$TAG: Request successful, but TTML response is empty or null")
+            }
             ttml
         } else {
-            println("$TAG: API returned status: ${response.status}")
+            println("$TAG: API returned error status: ${response.status.value} ${response.status.description}")
             null
         }
     }.getOrElse { e ->
-        println("$TAG: Exception during fetchTTML: ${e.message}")
+        println("$TAG: Exception during fetchTTML -> ${e.message}")
+        e.printStackTrace()
         null
     }
 
