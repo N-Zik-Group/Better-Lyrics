@@ -1,6 +1,6 @@
 # Better-Lyrics
 
-Better-Lyrics is a library to parse and manage lyrics in TTML format, utilized in the N-Zik project.
+Better-Lyrics is a library for parsing and managing TTML lyrics, including word-by-word synchronization support, used in the N-Zik project.
 
 > **Note:** This project is a fork of the Better Lyrics implementation originally created by **[MetroList](https://github.com/MetrolistGroup/Metrolist)**. 
 
