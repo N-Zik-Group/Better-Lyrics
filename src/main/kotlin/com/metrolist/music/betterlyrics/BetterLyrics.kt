@@ -12,6 +12,7 @@ import io.ktor.client.request.parameter
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import timber.log.Timber
 
 object BetterLyrics {
     private const val TAG = "BetterLyrics"
@@ -50,7 +51,7 @@ object BetterLyrics {
         duration: Int = -1,
         album: String? = null,
     ): String? = runCatching {
-        println("$TAG: Requesting TTML -> Title: '$title' | Artist: '$artist' | Duration: $duration | Album: '${album ?: "N/A"}'")
+        Timber.d("%s: Requesting TTML -> Title: '%s' | Artist: '%s' | Duration: %d | Album: '%s'", TAG, title, artist, duration, album ?: "N/A")
         val response = client.get("/getLyrics") {
             parameter("s", title)
             parameter("a", artist)
@@ -62,23 +63,22 @@ object BetterLyrics {
             }
         }
         
-        println("$TAG: Request URL: ${response.call.request.url}")
+        Timber.d("%s: Request URL: %s", TAG, response.call.request.url)
         
         if (response.status == HttpStatusCode.OK) {
             val ttml = response.body<TTMLResponse>().ttml?.trim()?.takeIf { it.isNotEmpty() }
             if (ttml != null) {
-                println("$TAG: Successfully received TTML (length=${ttml.length})")
+                Timber.d("%s: Successfully received TTML (length=%d)", TAG, ttml.length)
             } else {
-                println("$TAG: Request successful, but TTML response is empty or null")
+                Timber.d("%s: Request successful, but TTML response is empty or null", TAG)
             }
             ttml
         } else {
-            println("$TAG: API returned error status: ${response.status.value} ${response.status.description}")
+            Timber.e("%s: API returned error status: %d %s", TAG, response.status.value, response.status.description)
             null
         }
     }.getOrElse { e ->
-        println("$TAG: Exception during fetchTTML -> ${e.message}")
-        e.printStackTrace()
+        Timber.e(e, "%s: Exception during fetchTTML", TAG)
         null
     }
 

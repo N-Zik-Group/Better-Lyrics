@@ -2,6 +2,7 @@ package com.metrolist.music.betterlyrics
 
 import org.w3c.dom.Element
 import org.w3c.dom.Node
+import timber.log.Timber
 import javax.xml.parsers.DocumentBuilderFactory
 
 object TTMLParser {
@@ -107,7 +108,7 @@ object TTMLParser {
                 walk(body, lines, globalOffset, null)
             }
         } catch (e: Exception) {
-            println("TTMLParser.parseTTML: Failed to parse TTML: ${e.message}")
+            Timber.e(e, "TTMLParser: Failed to parse TTML")
             return emptyList()
         }
         return lines
