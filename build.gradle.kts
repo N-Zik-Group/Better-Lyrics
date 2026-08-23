@@ -7,7 +7,7 @@ plugins {
 
 configure<com.android.build.api.dsl.LibraryExtension> {
     namespace = "com.metrolist.music.betterlyrics"
-    compileSdk = 35
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
