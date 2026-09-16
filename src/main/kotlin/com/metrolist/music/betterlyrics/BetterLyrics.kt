@@ -45,7 +45,7 @@ object BetterLyrics {
         }
     }
 
-    private suspend fun fetchTTML(
+    suspend fun fetchTTML(
         artist: String,
         title: String,
         duration: Int = -1,
