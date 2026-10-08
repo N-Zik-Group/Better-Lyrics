@@ -1,0 +1,139 @@
+name: 👾 Bug report
+description: Make a bug report to help us improve Better-Lyrics
+title: "[BUG]: "
+labels: ["bug"]
+assignees:
+  - NEVARLeVrai
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ****
+        ### ❗ READ BEFORE SUBMITTING ❗
+
+        Better-Lyrics is an Android library — in practice it is consumed by the **N-Zik** app.
+        If you found the bug through N-Zik, fill in the *Host app* field below so we can
+        reproduce it in the right context.
+
+        * **Parsing bug (wrong lyrics, empty result, crash):**
+        If you can, paste the problematic TTML snippet (or a link to it) in the *TTML snippet*
+        field below — that's the fastest way for us to reproduce a parsing issue.
+        ****
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: 📝 Before submitting
+      description: Please verify the following steps before submitting your issue. Completing these steps may fix problems!
+      options:
+        - label: I have checked for already existing issues.
+          required: true
+        - label: I am using the latest commit of Better-Lyrics.
+          required: true
+
+  - type: input
+    id: version-number
+    attributes:
+      label: 🏷️ Version / Commit
+      description: Please specify the version or commit of Better-Lyrics affected.
+      placeholder: "e.g. commit a1b2c3d — or 'latest main'"
+    validations:
+      required: true
+
+  - type: input
+    id: host-app
+    attributes:
+      label: 📱 Host App (Optional)
+      description: Which app was the library running in when the bug occurred?
+      placeholder: "e.g. N-Zik 3.4.5 (Beta)"
+    validations:
+      required: false
+
+  - type: input
+    id: android-version
+    attributes:
+      label: 🤖 Android Version
+      description: On which Android version does the bug occur?
+      placeholder: "e.g. Android 14 (API 34)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: ttml
+    attributes:
+      label: 📝 TTML Snippet (Optional)
+      description: For parsing bugs — paste the problematic TTML snippet (or a link to it). Remove any personal data first.
+      placeholder: |
+        <ttm:tt>
+          ...
+        </ttm:tt>
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ****
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 👾 Bug description
+      description: Clearly describe the bug you are experiencing (wrong lyrics, missing timestamps, crash, empty result…).
+      placeholder: |
+        I want to fetch the lyrics of '...' but '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 🔄 How to reproduce
+      description: Provide step-by-step instructions on how to trigger the bug (title, artist, album, duration if relevant).
+      placeholder: |
+        1. Request the lyrics of '...' by '...'
+        2. Do '...'
+        3. Boom! Error happens
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: ✨ Expected Behavior
+      description: What do you expect to happen instead?
+      placeholder: |
+        I expected that '...' would '...'
+    validations:
+      required: true
+
+  - type: textarea
+    id: media
+    attributes:
+      label: 📸 Media (Optional)
+      description: Add screenshots to help us see the bug in action.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ****
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 📜 Logcat / Timber logs (Optional)
+      description: |
+        The library logs via Timber — paste the relevant logcat output here, it often
+        pinpoints the problem directly (e.g. `adb logcat | grep -i lyrics`).
+      placeholder: |
+        Paste the logcat output here, or leave empty if nothing was logged
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ****
