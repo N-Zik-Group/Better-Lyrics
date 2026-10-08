@@ -1,0 +1,61 @@
+{
+  "repo_notes": [
+    "Better-Lyrics is a Kotlin library for parsing and managing TTML (Timed Text Markup Language) lyrics, including word-by-word synchronization support.",
+    "Used as a Gradle module (':betterlyrics') in the N-Zik app (see N-Zik-Group/N-Zik settings.gradle.kts).",
+    "Fork of the Better Lyrics implementation originally created by MetroList.",
+    "Code lives in src/main/kotlin/com/metrolist/music/betterlyrics/: BetterLyrics.kt (fetch/parse entry point, public fetchTTML), TTMLParser.kt (TTML parsing) and models/ (Track.kt).",
+    "Tests live under src/test/kotlin/com/metrolist/music/betterlyrics/ (TTMLParserTest.kt).",
+    "Tone: concise technical library documentation for Kotlin/Android contributors."
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "page_notes": [
+        {
+          "content": "Introduction: what the library parses, where it is used (N-Zik), and its relationship to the MetroList fork."
+        }
+      ]
+    },
+    {
+      "title": "TTML Parsing",
+      "page_notes": [
+        {
+          "content": "TTMLParser.kt: TTML document structure, timings, and how lyrics entries are extracted."
+        }
+      ]
+    },
+    {
+      "title": "Word-by-word Synchronization",
+      "parent": "TTML Parsing",
+      "page_notes": [
+        {
+          "content": "How per-word timing data is represented and consumed for synced lyrics display."
+        }
+      ]
+    },
+    {
+      "title": "Data Models",
+      "page_notes": [
+        {
+          "content": "models/Track.kt and the lyric data structures produced by the parser."
+        }
+      ]
+    },
+    {
+      "title": "Testing",
+      "page_notes": [
+        {
+          "content": "TTMLParserTest.kt: parsing scenarios covered and how to add new fixtures."
+        }
+      ]
+    },
+    {
+      "title": "Integration",
+      "page_notes": [
+        {
+          "content": "Adding the library as a Gradle submodule in Android projects (':betterlyrics')."
+        }
+      ]
+    }
+  ]
+}
