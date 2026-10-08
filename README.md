@@ -1,4 +1,6 @@
 <div align="center">
+  <img alt="project's banner" src="https://raw.githubusercontent.com/N-Zik-Group/N-Zik/main/assets/design/ic_banner2.png" width="1080" />
+
   <h1>Better-Lyrics</h1>
   <p>
     Better-Lyrics is a library for parsing and managing TTML lyrics, including
