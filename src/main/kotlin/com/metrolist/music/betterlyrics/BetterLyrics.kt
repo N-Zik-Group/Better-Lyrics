@@ -13,9 +13,21 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import timber.log.Timber
+import okhttp3.Protocol
+import okhttp3.Response
 
 object BetterLyrics {
     private const val TAG = "BetterLyrics"
+
+    /**
+     * Root-level offline gate, wired by the app at startup (MainApplication).
+     * When non-null and it returns false, every outbound request short-circuits
+     * with a synthetic 503. Read live per request. Null until wired keeps the
+     * module self-contained for standalone/tests use.
+     */
+    @Volatile
+    var offlineGate: (() -> Boolean)? = null
+
     private val client by lazy {
         HttpClient(OkHttp) {
             install(ContentNegotiation) {
@@ -38,6 +50,26 @@ object BetterLyrics {
                 headers {
                     append("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
                     append("Accept", "application/json")
+                }
+            }
+
+            // Root-level offline gate (app-wired): fast-fail synthetic 503 while offline.
+            engine {
+                config {
+                    addInterceptor { chain ->
+                        val gate = offlineGate
+                        if (gate != null && !gate()) {
+                            val request = chain.request()
+                            Timber.tag(TAG).d("offline: short-circuited ${request.method} ${request.url.encodedPath}")
+                            return@addInterceptor Response.Builder()
+                                .request(request)
+                                .protocol(Protocol.HTTP_1_1)
+                                .code(503)
+                                .message("No network connection")
+                                .build()
+                        }
+                        chain.proceed(chain.request())
+                    }
                 }
             }
 
