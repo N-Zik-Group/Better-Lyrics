@@ -76,6 +76,8 @@ git clone https://github.com/N-Zik-Group/Better-Lyrics.git
 
 # 👀 Status
 
+[![Refresh contributor grids](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/readme-contributors.yml/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/readme-contributors.yml)
+
 [![CodeQL](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/codeql.yml/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/codeql.yml)  
 [![Copilot cloud agent](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/copilot-swe-agent/copilot/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/copilot-swe-agent/copilot)  
 [![Dependabot Updates](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependabot/dependabot-updates)  
@@ -85,7 +87,11 @@ git clone https://github.com/N-Zik-Group/Better-Lyrics.git
 
 # 👥 Contributors
 
-[![GitHub contributors](https://contrib.rocks/image?repo=N-Zik-Group/Better-Lyrics)](https://github.com/N-Zik-Group/Better-Lyrics/graphs/contributors)
+<!-- project-contributors:start -->
+<p align="center">
+<a href="https://github.com/NEVARLeVrai"><img src="https://avatars.githubusercontent.com/u/63956787?v=4" width="54" height="54" alt="NEVARLeVrai" title="NEVARLeVrai" /></a>
+</p>
+<!-- project-contributors:end -->
 
 # 🎖️ Credits
 
