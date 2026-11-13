@@ -74,6 +74,10 @@ Use this command to clone the repo
 git clone https://github.com/N-Zik-Group/Better-Lyrics.git
 ```
 
+# 👥 Contributors
+
+[![GitHub contributors](https://contrib.rocks/image?repo=N-Zik-Group/Better-Lyrics)](https://github.com/N-Zik-Group/Better-Lyrics/graphs/contributors)
+
 # 🎖️ Credits
 
 See the [N-Zik credits](https://github.com/N-Zik-Group/N-Zik/blob/main/ComposeN-Zik/src/androidMain/res/raw/credits.md#android-extension-modules).
