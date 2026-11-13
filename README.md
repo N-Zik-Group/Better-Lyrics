@@ -74,11 +74,9 @@ Use this command to clone the repo
 git clone https://github.com/N-Zik-Group/Better-Lyrics.git
 ```
 
-# 🫂 Acknowledgements
+## Credits
 
-### 🛠 Based on / Inspired by:
-
-- [**MetroList**](https://github.com/MetrolistGroup/Metrolist): The Better Lyrics implementation this project is based on.
+See the [N-Zik credits](https://github.com/N-Zik-Group/N-Zik/blob/main/ComposeN-Zik/src/androidMain/res/raw/credits.md#android-extension-modules).
 
 Made with ❤️ by [NEVARLeVrai](https://github.com/NEVARLeVrai)
 Licensed under GPLv3 - see [LICENSE](LICENSE)
