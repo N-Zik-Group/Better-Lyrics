@@ -72,11 +72,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for setup, verification and pull requests
 [![Refresh contributor grids](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/readme-contributors.yml/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/readme-contributors.yml)
 
 [![CodeQL](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/codeql.yml/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/codeql.yml)  
-[![Copilot cloud agent](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/copilot-swe-agent/copilot/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/copilot-swe-agent/copilot)  
 [![Dependabot Updates](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependabot/dependabot-updates)  
 [![Automatic Dependency Submission](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependency-graph/auto-submission/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/dependency-graph/auto-submission)  
-[![CodeQL - Code Quality](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/github-code-quality/codeql/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/github-code-quality/codeql)  
-[![CodeQL](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/N-Zik-Group/Better-Lyrics/actions/workflows/github-code-scanning/codeql)
 
 # 👥 Contributors
 
